@@ -1,4 +1,4 @@
-package steps;
+package br.com.franco.steps;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
