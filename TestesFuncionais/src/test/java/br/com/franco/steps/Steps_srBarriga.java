@@ -13,8 +13,10 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import junit.framework.Assert;
 
 public class Steps_srBarriga {
+	
 	
 	@After
 	public void encerraDriver() {
@@ -45,11 +47,18 @@ public class Steps_srBarriga {
 		   driver.findElement(By.tagName("button")).click();
 	   }
 
-	   @Then("será exibida a mensagem de erro {string}")
+	   @Then("será exibida a mensagem {string}")
 	   public void será_exibida_a_mensagem_de_erro(String string) {
 	       
 		   String msgErro = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
 		   assertEquals(msgErro, string);
+	   }
+	   
+	   @Then("será exibida a mensagem de sucesso {string}")
+	   public void será_exibida_a_mensagem_de_sucesso(String string) {
+		   
+		   String msgSucesso = driver.findElement(By.xpath("//div[@class='alert alert-success']")).getText();
+		   assertEquals(msgSucesso, string);
 	   }
 
 	   @Given("preencho o campo email com {string}")
