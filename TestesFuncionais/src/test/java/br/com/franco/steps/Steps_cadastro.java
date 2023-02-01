@@ -1,5 +1,7 @@
 package br.com.franco.steps;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.AfterClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -57,6 +59,21 @@ public class Steps_cadastro {
 		String msg = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-success']")).getText();
 		Assert.assertEquals(string, msg);
 	}
+	
+	
+	@Given("preencho com o email {string}")
+	public void preenchoComOemail(String string) {
+	    
+		Driver.getDriver().findElement(By.id("email")).sendKeys(string);
+	}
+	
+	@Then("será exibido o alerta de erro {string}")
+	public void seráExibidoOAlertaDeErro(String string) {
+	    
+		String msg = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
+		assertEquals(msg, string);
+	}
+
 	
 	@After
 	public void fechaBrowser() {
