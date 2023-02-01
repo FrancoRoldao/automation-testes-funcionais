@@ -27,26 +27,14 @@ public class Massa {
 	public static void setNomeCadastro(String nomeCadastro) {
 		Massa.nomeCadastro = nomeCadastro;
 	}
+	
 	public static String getSenhaCadastro() {
 		return senhaCadastro;
 	}
 	public static void setSenhaCadastro(String senhaCadastro) {
 		Massa.senhaCadastro = senhaCadastro;
 	}
-	public static String getGeradorEmail() {
-		return geradorEmail;
-	}
-	public static void setGeradorEmail(String geradorEmail) {
-		Massa.geradorEmail = geradorEmail;
-	}
-	
-	/*
-	public static String getDominioEmail() {
-		return dominioEmail;
-	}
-	public static void setDominioEmail(String dominioEmail) {
-		Massa.dominioEmail = dominioEmail;
-	}
+
 	public static String getEmailCadastro() {
 		return emailCadastro;
 	}
@@ -54,7 +42,7 @@ public class Massa {
 		Massa.emailCadastro = emailCadastro;
 	}
 	
-	*/
+
 	
 	
 	

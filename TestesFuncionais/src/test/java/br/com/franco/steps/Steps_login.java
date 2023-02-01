@@ -1,6 +1,6 @@
 package br.com.franco.steps;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,16 +10,19 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import junit.framework.Assert;
 
 public class Steps_login {
 
+	private WebDriver driver;
+	
 	@After
 	public void encerraDriver() {
 
 		driver.quit();
 	}
 
-	private WebDriver driver;
+	
 
 	@Given("que acesso a pagina de login")
 	public void que_acesso_a_pagina_de_login() {
@@ -46,14 +49,14 @@ public class Steps_login {
 	public void será_exibida_a_mensagem_de_erro(String string) {
 
 		String msgErro = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
-		assertEquals(msgErro, string);
+		Assert.assertEquals(msgErro, string);
 	}
 
 	@Then("será exibida a mensagem de sucesso {string}")
 	public void será_exibida_a_mensagem_de_sucesso(String string) {
 
 		String msgSucesso = driver.findElement(By.xpath("//div[@class='alert alert-success']")).getText();
-		assertEquals(msgSucesso, string);
+		Assert.assertEquals(msgSucesso, string);
 	}
 
 	@Given("preencho o campo email com {string}")
