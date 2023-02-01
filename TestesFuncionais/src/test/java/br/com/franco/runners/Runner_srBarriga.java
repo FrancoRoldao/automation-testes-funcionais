@@ -1,13 +1,17 @@
 package br.com.franco.runners;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
 
+import io.cucumber.java.AfterAll;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features/srBarriga/cadastro.feature",
+		features = "src/test/resources/features/srBarriga/login.feature",
 		glue = "br.com.franco.steps",
         plugin = {"pretty", "html:target/report-html", "json:target/report.json" },
         publish = false,
@@ -17,7 +21,6 @@ import io.cucumber.junit.CucumberOptions;
 		
 		)
 public class Runner_srBarriga {
-	
 	
 	
 	
