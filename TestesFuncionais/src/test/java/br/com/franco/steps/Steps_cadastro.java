@@ -4,8 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.AfterClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.idealized.Javascript;
 
 import br.com.franco.driver.Driver;
 import br.com.franco.utils.Massa;
@@ -72,7 +75,11 @@ public class Steps_cadastro {
 	    
 		String msg = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
 		assertEquals(msg, string);
+		
+		
 	}
+	
+	
 
 	
 	@After
@@ -80,6 +87,8 @@ public class Steps_cadastro {
 		
 		Driver.finalizaDriver();
 	}
+	
+	
 
 
 
