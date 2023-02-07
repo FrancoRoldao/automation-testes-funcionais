@@ -13,7 +13,7 @@ import br.com.franco.driver.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
-public class Steps_movimentacao {
+public class Steps_movimenta {
 	
 	@Given("seleciono criar movimentação")
 	public void selecionoCriarMovimentação() {
