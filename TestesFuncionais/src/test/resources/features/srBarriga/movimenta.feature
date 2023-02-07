@@ -19,7 +19,7 @@ Then será exibida a mensagem "<mensagem>"
 Examples:
 
 |tipoMovimentacao|dataMovimentacao|dataPagamento|interessado|valor|conta|situacao|mensagem|
-|Despesa| 03/02/2023  | 05/02/2023    |      eu     | "500"          | "conta"     | "paga"    | "msg"   |  
+|Despesa| 03/02/2023  | 05/02/2023    |     Franco    | 500         | "conta"     | "paga"    | "msg"   |  
 
 
 

@@ -51,7 +51,7 @@ public class Steps_movimenta {
 	public void preenchoOInteressado(String string) {
 	   
 		Driver.getDriver().findElement(By.id("interessado")).sendKeys(string);
-		assertEquals("eu", Driver.getDriver().findElement(By.id("interessado")).getText());
+		assertEquals(string, Driver.getDriver().findElement(By.id("interessado")).getAttribute("value"));
 	}
 	@Given("preencho o valor {string}")
 	public void preenchoOValor(String string) {
