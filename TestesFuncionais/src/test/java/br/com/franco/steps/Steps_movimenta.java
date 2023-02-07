@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import br.com.franco.driver.Driver;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Steps_movimenta {
@@ -38,15 +39,30 @@ public class Steps_movimenta {
 	public void preenchoADataDaMovimentacao(CharSequence dataMovimentacao) {
 	   
 		Driver.getDriver().findElement(By.id("data_transacao")).sendKeys(dataMovimentacao);
-		assertEquals(Driver.getDriver().findElement(By.id("data_transacao")).getAttribute("value"), "03/02/2023");
+		
+		assertEquals(Driver.getDriver().findElement(By.id("data_transacao")).getAttribute("value"), dataMovimentacao);
+		
+	
+		
+		
 		
 	}
 	@Given("preencho a data do pagamento  {string}")
 	public void preenchoADataDoPagamento(CharSequence dataPagamento) {
 	    
 		Driver.getDriver().findElement(By.id("data_pagamento")).sendKeys(dataPagamento);
-		assertEquals(Driver.getDriver().findElement(By.id("data_pagamento")).getAttribute("value"), "05/02/2023");
+		assertEquals(Driver.getDriver().findElement(By.id("data_pagamento")).getAttribute("value"), dataPagamento);
+		
+		
 	}
+	
+	@Given("preencho a descrição {string}")
+	public void preenchoADescrição(String string) {
+	    
+		Driver.getDriver().findElement(By.id("descricao")).sendKeys(string);
+	}
+	
+	
 	@Given("preencho o interessado {string}")
 	public void preenchoOInteressado(String string) {
 	   
@@ -69,15 +85,28 @@ public class Steps_movimenta {
 		select.selectByVisibleText(string);
 		assertTrue(select.getFirstSelectedOption().getText().equals(string));
 	}
-	@Given("seleciono a situação {string}")
-	public void selecionoASituação(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	
+	@Given("seleciono a situação Pago")
+	public void selecionoASituaçãoPago() {
+	    
+		WebElement radiobutton = Driver.getDriver().findElement(By.id("status_pago"));
+		radiobutton.click();
+		assertTrue(radiobutton.isSelected());
 	}
+	
+	
 	@When("clico em salvar")
 	public void clicoEmSalvar() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    
+		Driver.getDriver().findElement(By.tagName("button")).click();
+	}
+	
+	@Then("será exibida a mensagem de alerta {string}")
+	public void seráExibidaAMensagemDeAlerta(String textoEsperado) {
+	    
+		String textoObtido = Driver.getDriver().findElement(By.xpath("//div[starts-with(@class, 'alert')]")).getText();
+		assertEquals(textoObtido, textoEsperado);
+		
 	}
 
 
