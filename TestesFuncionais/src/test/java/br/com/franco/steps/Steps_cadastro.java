@@ -1,5 +1,6 @@
 package br.com.franco.steps;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.AfterClass;
@@ -76,6 +77,17 @@ public class Steps_cadastro {
 		String msg = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
 		assertEquals(msg, string);
 		
+		
+	}
+	
+	@Then("será exibido um alerta que contenha a mensagem {string}")
+	public void seráExibidoUmAlertaQueContenhaAMensagem(String string) {
+	    
+		String msg = Driver.getDriver().findElement(By.id("email")).getAttribute("validationMessage");
+	
+		System.out.println(msg);
+		
+		assertTrue(msg.contains(string));
 		
 	}
 	

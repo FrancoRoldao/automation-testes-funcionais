@@ -54,14 +54,20 @@ public class Steps_movimenta {
 		assertEquals(string, Driver.getDriver().findElement(By.id("interessado")).getAttribute("value"));
 	}
 	@Given("preencho o valor {string}")
-	public void preenchoOValor(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void preenchoOValor(CharSequence valor) {
+	    
+		Driver.getDriver().findElement(By.id("valor")).sendKeys(valor);
+		assertEquals(valor, Driver.getDriver().findElement(By.id("valor")).getAttribute("value"));
+		
 	}
 	@Given("seleciono a conta {string}")
 	public void selecionoAConta(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    
+		WebElement selectElement = Driver.getDriver().findElement(By.id("conta"));
+		Select select = new Select(selectElement);
+		List<WebElement> options = select.getOptions();
+		select.selectByVisibleText(string);
+		assertTrue(select.getFirstSelectedOption().getText().equals(string));
 	}
 	@Given("seleciono a situação {string}")
 	public void selecionoASituação(String string) {

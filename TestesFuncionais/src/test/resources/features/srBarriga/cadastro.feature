@@ -22,5 +22,16 @@ Scenario: Cadastro com sucesso
  When eu clicar em cadastrar
  Then será exibido o alerta de erro "Endereço de email já utilizado"
  
+ Scenario: Alerta ao tentar cadastrar email inválido
+ 
+ Given que acesso a pagina de cadastro
+ And preencho um nome "nome"
+ And preencho com o email "testenegativo"
+ And preencho uma senha "senha"
+ When eu clicar em cadastrar
+ Then será exibido um alerta que contenha a mensagem "no endereço de e-mail."
+ 
+ 
+ 
  
 

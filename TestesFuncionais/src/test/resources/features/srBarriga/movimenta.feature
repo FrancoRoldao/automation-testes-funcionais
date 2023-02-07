@@ -5,7 +5,7 @@ Given que estou logado na aplicação
 And visualizo a pagina inicial
 And seleciono criar movimentação
 
-Scenario Outline: Validações de inserção de movimentação 
+Scenario Outline: Validação de campos obrigatórios
 And preencho o tipo de movimentacao "<tipoMovimentacao>"
 And preencho a data da movimentacao "<dataMovimentacao>"
 And preencho a data do pagamento  "<dataPagamento>"
@@ -18,8 +18,8 @@ Then será exibida a mensagem "<mensagem>"
 
 Examples:
 
-|tipoMovimentacao|dataMovimentacao|dataPagamento|interessado|valor|conta|situacao|mensagem|
-|Despesa| 03/02/2023  | 05/02/2023    |     Franco    | 500         | "conta"     | "paga"    | "msg"   |  
+|tipoMovimentacao|dataMovimentacao|dataPagamento|interessado|valor|conta                   |situacao|mensagem|
+|Despesa         | 03/02/2023     |05/02/2023   | full      | 500 |Conta para movimentacoes| "paga" | "msg"  |  
 
 
 
