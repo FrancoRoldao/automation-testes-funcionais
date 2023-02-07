@@ -3,6 +3,8 @@ package br.com.franco.steps;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -32,15 +34,18 @@ public class Steps_movimenta {
 	}
 	
 	
-	@Given("preencho a data da movimentacao {int}\\/{int}\\/{int}")
-	public void preenchoADataDaMovimentacao(Integer int1, Integer int2, Integer int3) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@Given("preencho a data da movimentacao {string}")
+	public void preenchoADataDaMovimentacao(CharSequence dataMovimentacao) {
+	   
+		Driver.getDriver().findElement(By.id("data_transacao")).sendKeys(dataMovimentacao);
+		assertEquals(Driver.getDriver().findElement(By.id("data_transacao")).getAttribute("value"), "03/02/2023");
+		
 	}
-	@Given("preencho a data do pagamento  {int}\\/{int}\\/{int}")
-	public void preenchoADataDoPagamento(Integer int1, Integer int2, Integer int3) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@Given("preencho a data do pagamento  {string}")
+	public void preenchoADataDoPagamento(CharSequence dataPagamento) {
+	    
+		Driver.getDriver().findElement(By.id("data_pagamento")).sendKeys(dataPagamento);
+		assertEquals(Driver.getDriver().findElement(By.id("data_pagamento")).getAttribute("value"), "05/02/2023");
 	}
 	@Given("preencho o interessado {string}")
 	public void preenchoOInteressado(String string) {
