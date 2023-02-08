@@ -3,10 +3,11 @@ Feature: criar movimentacao
 Background:
 Given que estou logado na aplicação 
 And visualizo a pagina inicial
-And seleciono criar movimentação
+
 
 Scenario Outline: Validação de campos obrigatórios em Criar Movimentação 
-And preencho o tipo de movimentacao "<tipoMovimentacao>"
+And seleciono criar movimentação
+* preencho o tipo de movimentacao "<tipoMovimentacao>"
 * preencho a data da movimentacao "<dataMovimentacao>"
 * preencho a data do pagamento  "<dataPagamento>"
 * preencho a descrição "<descricao>"
@@ -29,5 +30,11 @@ Examples:
 |Receita         | 07/02/2023     | 07/02/2023  |FaltaInteressa |           | 500 |Conta para movimentacoes| Interessado é obrigatório                     |
 |Receita         | 07/02/2023     | 07/02/2023  |FaltaValor     |   notfull |     |Conta para movimentacoes| Valor é obrigatório\nValor deve ser um número |               
                          
+Scenario: Verifica movimentação existente no extrato
+When seleciono Resumo Mensal
+Then visualizo os dados da movimentação com o valor "Movimentacao para extrato"
+
+
+
 
 
