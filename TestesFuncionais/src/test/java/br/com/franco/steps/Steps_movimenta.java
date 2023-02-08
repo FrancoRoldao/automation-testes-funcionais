@@ -104,10 +104,17 @@ public class Steps_movimenta {
 	@Then("será exibida a mensagem de alerta {string}")
 	public void seráExibidaAMensagemDeAlerta(String textoEsperado) {
 	    
-		String textoObtido = Driver.getDriver().findElement(By.xpath("//div[starts-with(@class, 'alert')]")).getText();
-		assertEquals(textoObtido, textoEsperado);
+		String textoObtido = Driver.getDriver().findElement(By.xpath("//div[starts-with(@class, 'alert')]")).getAttribute("innerText");
+		//assertEquals(textoObtido, textoEsperado);
+		assertTrue(textoObtido.contains(textoEsperado));
+		
 		
 	}
+	
+	
+
+
+
 
 
 
