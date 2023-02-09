@@ -5,4 +5,8 @@
 
 # Sobre os testes:
 
+Caminho facilitado para os arquivos: 
+
+Features: <a href="https://github.com/FrancoRoldao/Automation-testes_funcionais/tree/master/TestesFuncionais/src/test/resources/features">aqui</a>
+
 
