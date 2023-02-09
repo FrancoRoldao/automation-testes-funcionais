@@ -1,4 +1,5 @@
-<h1 align="center">Testes Funcionais Automatizados</h1>
+<h1 align="center">Testes Funcionais Automatizados
+</h1>
 
 # Sobre os testes:
 
@@ -14,6 +15,7 @@ _Caminho facilitado para os arquivos:_
 - Driver Centralizado
 - Captura de Screenshots
 - Reúso de código
+- Tabela de exemplos 
 
 
 
