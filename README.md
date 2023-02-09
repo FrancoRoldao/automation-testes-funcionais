@@ -7,8 +7,13 @@
 
 Caminho facilitado para os arquivos: 
 
-Features: <a href="https://github.com/FrancoRoldao/Automation-testes_funcionais/tree/master/TestesFuncionais/src/test/resources/features">aqui</a>
+**Features:** <a href="https://github.com/FrancoRoldao/Automation-testes_funcionais/tree/master/TestesFuncionais/src/test/resources/features">aqui</a>
 
-Step Definitions: <a href="https://github.com/FrancoRoldao/Automation-testes_funcionais/tree/master/TestesFuncionais/src/test/java/br/com/franco/steps">aqui</a>
+**Step Definitions:** <a href="https://github.com/FrancoRoldao/Automation-testes_funcionais/tree/master/TestesFuncionais/src/test/java/br/com/franco/steps">aqui</a>
+
+**Hooks:** <a href="https://github.com/FrancoRoldao/Automation-testes_funcionais/tree/master/TestesFuncionais/src/test/java/br/com/franco/steps/Hooks">aqui</a>
+
+
+
 
 
