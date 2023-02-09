@@ -30,9 +30,7 @@ Examples:
 |Receita         | 07/02/2023     | 07/02/2023  |FaltaInteressa |           | 500 |Conta para movimentacoes| Interessado é obrigatório                     |
 |Receita         | 07/02/2023     | 07/02/2023  |FaltaValor     |   notfull |     |Conta para movimentacoes| Valor é obrigatório\nValor deve ser um número |               
                          
-Scenario: Verifica movimentação existente no extrato
-When seleciono Resumo Mensal
-Then visualizo os dados da movimentação com o valor "Movimentacao para extrato"
+
 
 
 

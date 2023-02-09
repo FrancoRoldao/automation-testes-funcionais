@@ -1,21 +1,16 @@
 package br.com.franco.steps;
 
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import br.com.franco.driver.Driver;
-import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.Assert;
 
 public class Steps_login {
 
-	
 	@Given("que acesso a pagina de login")
 	public void que_acesso_a_pagina_de_login() {
 
@@ -39,14 +34,14 @@ public class Steps_login {
 	public void será_exibida_a_mensagem_de_erro(String string) {
 
 		String msgErro = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
-		Assert.assertEquals(msgErro, string);
+		assertEquals(msgErro, string);
 	}
 
 	@Then("será exibida a mensagem de sucesso {string}")
 	public void será_exibida_a_mensagem_de_sucesso(String string) {
 
 		String msgSucesso = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-success']")).getText();
-		Assert.assertEquals(msgSucesso, string);
+		assertEquals(msgSucesso, string);
 	}
 
 	@Given("preencho o campo email com {string}")
@@ -54,14 +49,5 @@ public class Steps_login {
 
 		Driver.getDriver().findElement(By.id("email")).sendKeys(string);
 	}
-	
-	@After
-	public void fechaBrowser() {
-		
-		Driver.finalizaDriver();
-	}
-
-
 
 }
-
