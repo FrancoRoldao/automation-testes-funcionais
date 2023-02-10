@@ -1,6 +1,15 @@
 <h1 align="center">Testes Funcionais Automatizados
 </h1>
 
+## Nesse projeto utilizei: 
+
+- Java
+- Gherkin
+- Cucumber
+- Selenium WebDriver
+- JUnit
+
+
 # Sobre os testes:
 
 _Caminho facilitado para os arquivos:_
@@ -26,7 +35,6 @@ _Caminho facilitado para os arquivos:_
 
 
 <footer>
-- Página usada (Sr. Barriga): https://seubarriga.wcaquino.me/ 
-- Créditos da página usada nos testes ao <a href="https://wcaquino.me/">Francisco Wagner Costa Aquino</a>
+Site testado: (Sr. Barriga): https://seubarriga.wcaquino.me/ - Créditos do site usado ao seu desenvolvedor, Francisco Wagner.
 </footer>
 
