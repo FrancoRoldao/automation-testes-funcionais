@@ -9,6 +9,8 @@
 - Selenium WebDriver
 - JUnit
 
+<hr></hr>
+
 
 # Sobre os testes:
 
