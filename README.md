@@ -1,7 +1,7 @@
 <h1 align="center">Testes Funcionais Automatizados
 </h1>
 
-## Nesse projeto utilizei: 
+### Nesse projeto utilizei: 
 
 - Java
 - Gherkin
