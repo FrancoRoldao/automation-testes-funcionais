@@ -1,13 +1,11 @@
 <h1 align="center">Testes Funcionais Automatizados
 </h1>
 
-### Nesse projeto utilizei: 
+### Estratégia de Testes: 
 
-- Java
-- Gherkin
-- Cucumber
-- Selenium WebDriver
-- JUnit
+<img src="https://github.com/FrancoRoldao/automation-testes-funcionais/blob/master/images/Sr.%20Barriga(estrategia).png"></img>
+
+
 
 <hr></hr>
 
