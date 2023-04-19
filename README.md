@@ -24,7 +24,7 @@ _Caminho facilitado para os arquivos:_
 - Driver Centralizado
 - Captura de Screenshots
 - Reúso de código
-- Tabela de exemplos 
+- Data Table
 - Massas 100% dinâmicas (não é necessário nenhuma interferência manual)
 
 
