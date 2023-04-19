@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 		glue = "br.com.franco.steps",
         plugin = {"pretty", "html:target/report-html", "json:target/report.json" },
         publish = false,
-        tags = "@T1",
+        tags = "@login",
 		stepNotifications = true,
 		dryRun = false,
 		snippets = io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE

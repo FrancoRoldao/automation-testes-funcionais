@@ -1,49 +1,55 @@
-Feature: Login 
+Feature: Login
+  
+  Como um usuario 
+  Quero logar na aplicação
+  Para utilizar os serviços disponiveis
 
-Como um usuario 
-Quero logar na aplicação
-Para utilizar os serviços disponiveis 
+  @T1 @login
+  Scenario: Não deve logar com o campo e-mail vazio
+    Given que acesso a pagina de login
+    And preencho o campo senha
+      | senha      |
+      | testes1234 |
+    When eu clicar em entrar
+    Then será exibida a mensagem de erro
+      | mensagem                     |
+      | Email é um campo obrigatório |
 
-@T1
-Scenario: Não deve logar com o campo e-mail vazio 
+  @T2 @login
+  Scenario: Não deve logar com o campo senha vazio
+    Given que acesso a pagina de login
+    And preencho o campo email
+      | email                   |
+      | testesfranco@testes.com |
+    When eu clicar em entrar
+    Then será exibida a mensagem de erro
+      | mensagem                     |
+      | Senha é um campo obrigatório |
 
-Given que acesso a pagina de login 
-And preencho o campo senha
-|senha|
-|testes1234|
-When eu clicar em entrar
-Then será exibida a mensagem de erro 
-|mensagem|
-|Email é um campo obrigatório|
+  @T3 @login
+  Scenario: Deve logar com sucesso ao inserir credenciais válidas
+    Given que acesso a pagina de login
+    And preencho o campo email
+      | email                   |
+      | testesfranco@testes.com |
+    And preencho o campo senha
+      | senha      |
+      | testes1234 |
+    When eu clicar em entrar
+    Then será exibida a mensagem de sucesso
+      | mensagem                     |
+      | Bem vindo, TestesFuncionais! |
 
-
-
-
-@T2
-Scenario: Não deve logar com o campo senha vazio 
-
-Given que acesso a pagina de login 
-And preencho o campo email com "testesfranco@testes.com" 
-When eu clicar em entrar
-Then será exibida a mensagem "Senha é um campo obrigatório"
-
-@T3
-Scenario: Deve logar com sucesso ao inserir credenciais válidas
-
-Given que acesso a pagina de login
-And preencho o campo email com "testesfranco@testes.com"
-And preencho o campo senha com "testes1234"
-When eu clicar em entrar
-Then será exibida a mensagem de sucesso "Bem vindo, TestesFuncionais!"
-
-Scenario: Não deve logar com credenciais inválidas
-
-Given que acesso a pagina de login
-And preencho o campo email com "eunaoexisto@nnn.com"
-And preencho o campo senha com "11111"
-When eu clicar em entrar
-Then será exibida a mensagem "Problemas com o login do usuário" 
-
-
-
-
+  @T4 @login
+  Scenario: Não deve logar com credenciais inválidas
+    Given que acesso a pagina de login
+    And preencho o campo email
+      | email               |
+      | eunaoexisto@nnn.com |
+    And preencho o campo senha
+      | senha |
+      | 11111 |
+    When eu clicar em entrar
+    Then será exibida a mensagem de erro
+      | mensagem                         |
+      | Problemas com o login do usuário |

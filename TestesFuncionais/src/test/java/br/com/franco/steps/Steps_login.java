@@ -25,7 +25,7 @@ public class Steps_login {
 	@Given("preencho o campo senha")
 	public void preenchoOCampoSenha(io.cucumber.datatable.DataTable dataTable) {
 	   
-		Driver.getDriver().findElement(By.id("senha")).sendKeys(dt.getData(dataTable, "senha"));
+		Driver.getDriver().findElement(By.id("senha")).sendKeys(UtilsData.getData(dataTable, "senha"));
 	    //throw new io.cucumber.java.PendingException();
 	}
 
@@ -35,13 +35,6 @@ public class Steps_login {
 		Driver.getDriver().findElement(By.tagName("button")).click();
 	}
 
-	@Then("será exibida a mensagem {string}")
-	public void será_exibida_a_mensagem_de_erro(String string) {
-
-		String msgErro = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
-		assertEquals(msgErro, string);
-	}
-	
 	@Then("será exibida a mensagem de erro")
 	public void seráExibidaAMensagemDeErro(io.cucumber.datatable.DataTable dataTable) {
 	    
@@ -56,11 +49,20 @@ public class Steps_login {
 		String msgSucesso = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-success']")).getText();
 		assertEquals(msgSucesso, string);
 	}
+	
+	@Then("será exibida a mensagem de sucesso")
+	public void seráExibidaAMensagemDeSucesso(io.cucumber.datatable.DataTable dataTable) {
+	    
+		String msgSucesso = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-success']")).getText();
+		assertEquals(msgSucesso, getData(dataTable, "mensagem"));
+	    
+	}
 
-	@Given("preencho o campo email com {string}")
-	public void preencho_o_campo_email_com(String string) {
-
-		Driver.getDriver().findElement(By.id("email")).sendKeys(string);
+	@Given("preencho o campo email")
+	public void preenchoOCampoEmail(io.cucumber.datatable.DataTable dataTable) {
+	    
+		Driver.getDriver().findElement(By.id("email")).sendKeys(getData(dataTable, "email"));
+	    
 	}
 
 }
