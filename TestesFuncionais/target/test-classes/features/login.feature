@@ -8,9 +8,16 @@ Para utilizar os serviços disponiveis
 Scenario: Não deve logar com o campo e-mail vazio 
 
 Given que acesso a pagina de login 
-And preencho o campo senha com "testes1234"
+And preencho o campo senha
+|senha|
+|testes1234|
 When eu clicar em entrar
-Then será exibida a mensagem "Email é um campo obrigatório"
+Then será exibida a mensagem de erro 
+|mensagem|
+|Email é um campo obrigatório|
+
+
+
 
 @T2
 Scenario: Não deve logar com o campo senha vazio 
