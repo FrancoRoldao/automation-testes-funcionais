@@ -4,7 +4,7 @@ Como um usuario
 Quero logar na aplicação
 Para utilizar os serviços disponiveis 
 
-
+@T1
 Scenario: Não deve logar com o campo e-mail vazio 
 
 Given que acesso a pagina de login 
@@ -12,7 +12,7 @@ And preencho o campo senha com "testes1234"
 When eu clicar em entrar
 Then será exibida a mensagem "Email é um campo obrigatório"
 
-
+@T2
 Scenario: Não deve logar com o campo senha vazio 
 
 Given que acesso a pagina de login 
@@ -20,6 +20,7 @@ And preencho o campo email com "testesfranco@testes.com"
 When eu clicar em entrar
 Then será exibida a mensagem "Senha é um campo obrigatório"
 
+@T3
 Scenario: Deve logar com sucesso ao inserir credenciais válidas
 
 Given que acesso a pagina de login

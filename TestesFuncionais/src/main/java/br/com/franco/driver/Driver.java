@@ -16,7 +16,7 @@ public class Driver {
 
 		if (driver == null) {
 
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\franc\\OneDrive\\Documentos\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\franc\\OneDrive\\Documentos\\drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 
 
