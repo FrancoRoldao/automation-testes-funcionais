@@ -6,20 +6,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.openqa.selenium.By;
 
 import br.com.franco.driver.Driver;
+import br.com.franco.driver.Driver.*;
+import br.com.franco.pages.*;
 import br.com.franco.utils.Massa;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Steps_adicionarConta {
+	
 
 	@Given("que estou logado na aplicação")
 	public void queEstouLogadoNaAplicação() {
 
-		Driver.getDriver().get("https://seubarriga.wcaquino.me/login");
-		Driver.getDriver().findElement(By.id("email")).sendKeys("testesfranco@testes.com");
-		Driver.getDriver().findElement(By.id("senha")).sendKeys("testes1234");
-		Driver.getDriver().findElement(By.tagName("button")).click();
+		PageBase.getPage();
+		PageBase.loginPadrao();
 	}
 
 	@Given("visualizo a pagina inicial")
@@ -42,11 +43,18 @@ public class Steps_adicionarConta {
 		Driver.getDriver().findElement(By.linkText("Adicionar")).click();
 	}
 
-	@When("informo a {string}")
-	public void informoA(String string) {
-
-		string = Massa.getContaCadastro();
-		Driver.getDriver().findElement(By.id("nome")).sendKeys(string);
+	@When("informo a conta")
+	public void informoAConta() {
+	    
+		
+		Driver.getDriver().findElement(By.id("nome")).sendKeys(Massa.getContaCadastro());
+	   
+	}
+	
+	@When("informo a conta já existente")
+	public void informoAContaJáExistente() {
+	    
+		Driver.getDriver().findElement(By.id("nome")).sendKeys(Massa.getContaMesmoNome());
 	}
 
 	@When("seleciono salvar")

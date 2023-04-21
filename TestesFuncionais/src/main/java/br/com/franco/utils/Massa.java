@@ -20,9 +20,13 @@ public class Massa {
 	public static String emailCadastro = (geradorEmail+dominioEmail);
 	public static String contaCadastro = RandomString.make(6);
 	
+	public static String contaMesmoNome = "Conta mesmo nome";
 	
 	
 	
+	public static String getContaMesmoNome () {
+		return contaMesmoNome;
+	}
 	
 	public static String getContaCadastro() {
 		return contaCadastro;
@@ -40,6 +44,7 @@ public class Massa {
 	public static String getSenhaCadastro() {
 		return senhaCadastro;
 	}
+	
 	public static void setSenhaCadastro(String senhaCadastro) {
 		Massa.senhaCadastro = senhaCadastro;
 	}
