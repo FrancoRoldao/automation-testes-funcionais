@@ -9,11 +9,14 @@ import br.com.franco.driver.Driver;
 import br.com.franco.driver.Driver.*;
 import br.com.franco.pages.*;
 import br.com.franco.utils.Massa;
+import br.com.franco.utils.UtilsData;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Steps_adicionarConta {
+	
+	UtilsData dt = new UtilsData();
 	
 
 	@Given("que estou logado na aplicação")
@@ -68,12 +71,10 @@ public class Steps_adicionarConta {
 		Driver.getDriver().findElement(By.linkText("Listar")).click();
 	}
 
-	@Then("valido se conta já cadastrada está sendo {string}")
-	public void validoSeContaJáCadastradaEstáSendo(String string) {
-
-		String contaExistente = Driver.getDriver().findElement(By.xpath("//td[.='Conta para extrato']")).getText();
-		assertTrue(contaExistente.contains(contaExistente));
-
-	}
-
+@Then("valido se conta já cadastrada está sendo exibida")
+public void validoSeContaJáCadastradaEstáSendoExibida(io.cucumber.datatable.DataTable dataTable) {
+   
+	String contaExistente = Driver.getDriver().findElement(By.xpath("//td[.='Conta para extrato']")).getText();
+	assertTrue(contaExistente.contains(dt.getData(dataTable, "nomeConta")));
+}
 }

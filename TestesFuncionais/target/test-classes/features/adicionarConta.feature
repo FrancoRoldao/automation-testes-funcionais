@@ -35,7 +35,9 @@ Then será exibida a mensagem de erro
 @adicionarConta @adicionarConta4
 Scenario: Validar listagem de conta já existente
 And seleciono listar
-Then valido se conta já cadastrada está sendo "exibida"
+Then valido se conta já cadastrada está sendo exibida
+|nomeConta|
+|Conta para extrato|
 
 
 
