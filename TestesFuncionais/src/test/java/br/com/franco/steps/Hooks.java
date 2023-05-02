@@ -32,17 +32,19 @@ public class Hooks {
 		Driver.finalizaDriver();
 	}
 
+	// Configurando para capturar screenshot antes de fechar o browser.
 	@After(order = 1)
 	public void screenshot(Scenario scenario) {
 
 		File file = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(file, new File("target/screenshots/" + scenario.getId() + ".jpg"));
+			FileUtils.copyFile(file, new File("target/screenshots/" + scenario.getName() + ".jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
+	//será executado após o (order =1)
 	@After(order = 0)
 	public void fechaBrowser() {
 		// último after a ser executado;
