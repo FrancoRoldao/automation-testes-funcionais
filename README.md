@@ -26,6 +26,7 @@ _Caminho facilitado para os arquivos:_
 - Reúso de código
 - Data Table
 - Massas 100% dinâmicas (não é necessário nenhuma interferência manual)
+- Page Object
 
 
 
